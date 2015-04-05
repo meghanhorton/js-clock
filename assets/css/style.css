@@ -1,0 +1,136 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+html{
+	background: #E3533D;
+	color: #fff;
+}
+
+body{
+	background: transparent;
+	color: #fff;
+}
+h1,h2,h3,h4,h5,h6,p{
+	font-family: 'Lato','Helvetica Neue',Arial;
+	font-weight: 100;
+}
+h1{
+	font-size: 100px;
+}
+
+.cover{
+	height: 100vh;
+	width: 100vw;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+/* CLOCK */
+.clock{
+	margin: 10px auto;
+	background: #222;
+	border: 10px solid #000;
+	height: 300px;
+	width: 300px;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+}
+	/* RED CENTER OVERLAY */
+	.clock:before{
+		content: "";
+		position: absolute;
+		top: calc(50% - 7px);
+		left: calc(50% - 7px);
+		height: 14px;
+		width: 14px;
+		z-index: 300;
+		border-radius: 50%;
+		display: block;
+		background-color: #fff;
+		border: 3px solid #b31b1b;
+	}
+
+	/* GLOSSY OVERLAY */
+	.clock:after{
+		content: "";
+		display: block;
+		height: 300px;
+		width: 300px;
+		background: rgba(255,255,255,0.125);
+		border-radius: 50%;
+		top: -70%;
+		right: 0;
+		position: absolute;
+		z-index: 500;
+	}
+.hour-hand{
+	position: absolute;
+	left: calc(50% - 5px);
+	bottom: 50%;
+	height: 25%;
+	width: 10px;
+	background-color: #e9e9e9;
+	display: block;
+	transform: rotate(0deg);
+	transform-origin: bottom;
+	border-radius: 5px;
+	overflow: hidden;
+}
+	/* BLACK LINE INTERIOR */
+	.hour-hand:before{
+		content: "";
+		background-color: #222;
+		width: 6px;
+		margin: 3px 2px;
+		height:30px;
+		display: block;
+		border-radius: 5px;
+	}
+
+.minute-hand{
+	position: absolute;
+	left: calc(50% - 3px);
+	bottom: calc(50%);
+	height: 45%;
+	width: 6px;
+	background-color: #e9e9e9;
+	display: block;
+	transform: rotate(0deg);
+	transform-origin: bottom;
+	border-radius: 4px;
+	overflow: hidden;
+}
+	/* BLACK LINE INTERIOR */
+	.minute-hand:before{
+		content: "";
+		background-color: #222;
+		width: 4px;
+		margin: 3px 1px;
+		height:30px;
+		display: block;
+		border-radius: 5px;
+	}
+
+.second-hand{
+	position: absolute;
+	left: calc(50% - 2px);
+	bottom: 50%;
+	height: 45%;
+	width: 4px;
+	background-color: #b31b1b;
+	display: block;
+	transform: rotate(0deg);
+	transform-origin: bottom;
+	border-radius: 4px;
+	z-index: 200;
+}
+	.second-hand:before{
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -20px;
+		height:20px;
+		width: 4px;
+		border-radius: 4px;
+		background-color: #b31b1b;
+	}
